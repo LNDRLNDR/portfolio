@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Overlay for Rocket League</title>
+    <meta name="author" content="LNDRLNDRLNDR">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://twitter.com/LNDRLNDRLNDR">
+
+    <meta name="description"
+          content="Dynamic Overlay for Rocket League is the ultimate broadcasting tool.">
+    <meta name="keywords"
+          content="Overlay, HUD, Rocket League, RL, RLCS, esports, overlays, broadcast, caster, stream, twitch.">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="icon.ico"/>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GPS2BDRQ8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+      gtag('config', 'G-7GPS2BDRQ8');
+    </script>
+
+
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+            color: black;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+
+        html {
+            /*background: linear-gradient(to right, #182848, #244fb0, #182848);*/
+        }
+
+        main {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        #scroll-to-top {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #scroll-to-top.show {
+            opacity: 1;
+        }
+
+        #nav {
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        section {
+            padding-top: 40px;
+            width: 100%;
+        }
+
+        img {
+            margin-left: auto;
+            margin-right: auto;
+            object-fit: scale-down;
+            width: 100%;
+            max-width: 720px;
+        }
+
+        .portfolio_space {
+            display: flex;
+            justify-content: center;
+            flex-flow: column wrap;
+        }
+
+
+    </style>
+</head>
+<body>
+<header>
+    <nav id="nav">
+        <ul>
+            <li><a href="#info">Info</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h1 style="padding-top: 35px">Dynamic Broadcasting Overlay for Rocket League</h1>
+    <section id="info">
+        <h2>What is a Dynamic Overlay for Rocket League?</h2>
+        <p>The esports scene of Rocket League has come a long way. With millions of players and a thriving competitive
+            scene, it's become one of the most popular games on the market. But with so many people streaming and
+            watching Rocket League matches, it can be hard to stand out from the crowd.</p>
+
+        <p>That's where the Rocket League Dynamic Overlay HUD comes in. By adding a dynamic overlay to your stream, you
+            can create a more professional and engaging viewing experience for your audience. The overlay will display
+            key information about the match, including the score, timer, and team names, so viewers always know what's
+            happening. And because the overlay is fully automated, it frees up the casters to focus on the gameplay,
+            rather than worrying about the technical details of the stream.</p>
+
+        <p>But why choose the Rocket League Dynamic Overlay HUD from lndrlndrlndr? For one thing, my overlays are fully
+            customizable, so you can choose the colors, fonts, and other details that match your brand. And because we
+            use the latest coding techniques, my overlays are always up-to-date with the newest trends and technology
+            and work with every streaming platform.</p>
+
+        <h2>How to get a Custom Dynamic Overlay for Rocket League?</h2>
+        <p>If you're ready to take your Rocket League stream to the next level, lndrlndrlndr can help. We specialize in
+            creating custom dynamic overlays for Rocket League matches, designed to make your stream stand out from the
+            crowd.</p>
+
+        <p>So how does it work? First, we'll work with you to understand your needs and your brand. Then, we'll create a
+            custom overlay that matches your specifications, including the score, timer, team names, and any other
+            information you need to display. Finally, we'll provide you with the overlay code and any necessary
+            instructions, so you can start using it right away.</p>
+
+        <p>And don't worry about the cost - lndrlndrlndr can create an overlay for any budget. Whether you're a
+            professional esports organization or a small streamer just starting out, we can help you create a more
+            engaging and professional viewing experience for your audience.</p>
+    </section>
+    <section id="portfolio">
+
+        <h2>Portfolio</h2>
+        <p>Here you can see some of my past projects.</p>
+
+        <div class="portfolio_space">
+            <img
+                    alt="Rocket League overlay for RSC"
+                    src="rocket_league_overlay_for_RSC.png"
+            />
+            <img
+                    alt="Feer Twitch RL Overlay Hud"
+                    src="feer_hud_overlay_rocket_league.png"
+            />
+        </div>
+
+    </section>
+    <section id="contact" style="padding-bottom: 20px;">
+        <h2>Contact information</h2>
+        <p>Discord: lndrlndrlndr</p>
+        <p>Twitter: @LNDRLNDRLNDR</p>
+        <p>Mail: lndr.overlays@gmail.com</p>
+    </section>
+</main>
+<a id="scroll-to-top" href="#" class="btn-floating btn-large waves-effect waves-light red">
+    <i class="material-icons">arrow_upward</i>
+</a>
+<script>
+  const scrollToTopButton = document.querySelector('#scroll-to-top');
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    const main = document.querySelector('main');
+    const mainPosition = main.offsetTop;
+
+    if (currentScroll > mainPosition) {
+      scrollToTopButton.classList.add('show');
+    } else {
+      scrollToTopButton.classList.remove('show');
+    }
+  });
+
+  scrollToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+</script>
+</body>
+</html>
