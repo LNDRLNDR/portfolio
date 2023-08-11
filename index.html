@@ -103,20 +103,140 @@
         }
 
 
+        header ul, footer {
+            width: 100%;
+            background-color: black;
+            font-size: 22px;
+            min-height: 84px;
+            margin: 0;
+            align-items: center;
+        }
+
+        footer ul li {
+            color: white;
+            font-size: 20px;
+            margin-left: 15px;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        header ul, footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        header li {
+            padding-left: 25px;
+            padding-right: 25px;
+            height: 40px;
+        }
+
+        header li a {
+            display: block;
+            /*padding: 14px 25px 10px 25px;*/
+            text-transform: uppercase;
+            color: #6696fe !important;
+            text-decoration: none !important;
+            font-size: 24px;
+            /*margin: 20px;*/
+            font-weight: 300;
+            transition: all .25s;
+            border-bottom: 3px solid transparent;
+        }
+
+        header li.active a {
+            display: block;
+            /*padding: 14px 25px 10px 25px;*/
+            text-transform: uppercase;
+            color: #f44336 !important;
+            text-decoration: none !important;
+            font-size: 24px;
+            /*margin: 20px;*/
+            font-weight: 300;
+            transition: all .25s;
+            border-bottom: 3px solid #f44336;
+        }
+
+        header li a:hover {
+            display: block;
+            /*padding: 14px 25px 10px 25px;*/
+            text-transform: uppercase;
+            color: #f8982d !important;
+            text-decoration: none !important;
+            font-size: 24px;
+            /*margin: 20px;*/
+            font-weight: 300;
+            transition: all .25s;
+            border-bottom: 3px solid #f8982d;
+        }
+
+
+        .video_box {
+            margin-top: 35px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .video_box iframe {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video_box blockquote {
+            width: 350px;
+        }
     </style>
 </head>
 <body>
 <header>
-    <nav id="nav">
-        <ul>
-            <li><a href="#info">Info</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <ul>
+        <li title="CARL: Analysis Tool for Rocket League">
+            <a href="https://lndrlndr.github.io/">CARL</a>
+        </li>
+        <li title="BARL: Broadcast Assistant for Rocket League">
+            <a href="https://lndrlndr.github.io/BARL-Overlay/">BARL</a>
+        </li>
+        <li class="active" title="Overlay Portfolio">
+            <a href="https://lndrlndr.github.io/portfolio/">OVERLAYS</a>
+        </li>
+        <!--        <li><a href="https://lndrlndr.github.io/overlays/">CLIENTS</a></li>-->
+        <li title="Check out my Twitter">
+            <a target="_blank" href="https://x.com/LNDRLNDRLNDR">TWITTER</a>
+        </li>
+        <li title="Send me an Email">
+            <a target="_blank" href="mailto:lndr.overlays@gmail.com">EMAIL</a>
+        </li>
+        <li title="Join the BARL Discord server">
+            <a target="_blank" href="https://discord.gg/qF5FkJxNdR">DISCORD</a>
+        </li>
+    </ul>
 </header>
+
+<!--<header>-->
+<!--    <nav id="nav">-->
+<!--        <ul>-->
+<!--            <li><a href="#info">Info</a></li>-->
+<!--            <li><a href="#portfolio">Portfolio</a></li>-->
+<!--            <li><a href="#contact">Contact</a></li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+<!--</header>-->
 <main>
-    <h1 style="padding-top: 35px">Dynamic Broadcasting Overlay for Rocket League</h1>
+    <h1>Broadcasting Overlay HUD for Rocket League</h1>
+
+    <div class="video_box">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/T_GBebE8DJE?autoplay=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+    </div>
     <section id="info">
         <h2>What is a Dynamic Overlay for Rocket League?</h2>
         <p>The esports scene of Rocket League has come a long way. With millions of players and a thriving competitive
@@ -185,17 +305,34 @@
             </a>
         </p>
 
+        <div style="height: 35px;"></div>
+
     </section>
-    <section id="contact" style="padding-bottom: 20px;">
-        <h2>Contact information</h2>
-        <p>Discord: lndrlndrlndr</p>
-        <p>Twitter: @LNDRLNDRLNDR</p>
-        <p>Mail: lndr.overlays@gmail.com</p>
-    </section>
+<!--    <section id="contact" style="padding-bottom: 20px;">-->
+<!--        <h2>Contact information</h2>-->
+<!--        <p>Discord: lndrlndrlndr</p>-->
+<!--        <p>Twitter: @LNDRLNDRLNDR</p>-->
+<!--        <p>Mail: lndr.overlays@gmail.com</p>-->
+<!--    </section>-->
 </main>
 <a id="scroll-to-top" href="#" class="btn-floating btn-large waves-effect waves-light red">
     <i class="material-icons">arrow_upward</i>
 </a>
+<footer>
+    <ul style="color: white">
+        Contact:
+        <li title="Follow me on Twitter">
+            Twitter: <a target="_blank" href="https://x.com/LNDRLNDRLNDR">@LNDRLNDRLNDR</a>
+        </li>
+        <li title="Send me an Email">
+            Email: <a target="_blank" href="mailto:lndr.overlays@gmail.com">lndr.overlays@gmail.com</a>
+        </li>
+        <li title="Talk to me on Discord">
+            Discord: <a target="_blank" href="https://discord.gg/qF5FkJxNdR">lndrlndrlndr</a>
+        </li>
+    </ul>
+</footer>
+</body>
 <script>
   const scrollToTopButton = document.querySelector('#scroll-to-top');
 
@@ -219,5 +356,4 @@
   });
 
 </script>
-</body>
 </html>
