@@ -1,429 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dynamic Overlay for Rocket League</title>
-  <meta name="author" content="LNDRLNDRLNDR">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Dynamic Overlay for Rocket League</title>
+    <meta name="author" content="LNDRLNDRLNDR">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description"
-        content="Dynamic Overlay for Rocket League is the ultimate broadcasting tool.">
-  <meta name="keywords"
-        content="Overlay, HUD, Rocket League, RL, RLCS, esports, overlays, broadcast, caster, stream, twitch.">
+    <meta name="description"
+          content="Dynamic Overlay for Rocket League is the ultimate broadcasting tool.">
+    <meta name="keywords"
+          content="Overlay, HUD, Rocket League, RL, RLCS, esports, overlays, broadcast, caster, stream, twitch.">
 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="shortcut icon" type="image/x-icon" href="ico.png">
-  <link rel="apple-touch-icon" href="ico.png"/>
-
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GPS2BDRQ8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'G-7GPS2BDRQ8');
-  </script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="ico.png">
+    <link rel="apple-touch-icon" href="ico.png"/>
 
 
-  <style>
-    html, body {
-      height: 100%;
-      width: 100%;
-      font-family: 'Montserrat', sans-serif;
-      color: #1e1e1e;
-      margin: 0;
-      padding: 0;
-      background: transparent;
-    }
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GPS2BDRQ8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-    html {
-      background: #f5f5f5;
-    }
+      function gtag() {
+        dataLayer.push(arguments);
+      }
 
-    main {
-      padding-left: 50px;
-      padding-right: 50px;
-    }
-
-    #scroll-to-top {
-      position: fixed;
-      bottom: 1rem;
-      right: 1rem;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    #scroll-to-top.show {
-      opacity: 1;
-    }
-
-    #nav {
-      width: 100%;
-      position: fixed;
-      left: 0;
-      top: 0;
-    }
-
-    h1 {
-      margin-left: auto;
-      margin-right: auto;
-      object-fit: scale-down;
-      width: 100%;
-      max-width: 720px;
-      font-size: 36px;
-      font-weight: bold;
-    }
-
-    section {
-      margin-left: auto;
-      margin-right: auto;
-      object-fit: scale-down;
-      width: 100%;
-      max-width: 720px;
-      padding-top: 35px;
-    }
-
-    img {
-      margin-left: auto;
-      margin-right: auto;
-      object-fit: scale-down;
-      width: 100%;
-      max-width: 720px;
-    }
-
-    .portfolio_space {
-      display: flex;
-      justify-content: center;
-      flex-flow: column wrap;
-    }
+      gtag('js', new Date());
+      gtag('config', 'G-7GPS2BDRQ8');
+    </script>
 
 
-    header ul, footer {
-      width: 100%;
-      background-color: #1e1e1e;
-      color: white;
-      font-size: 22px;
-      min-height: 84px;
-      margin: 0;
-      align-items: center;
-    }
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+            color: #1e1e1e;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+        }
 
-    footer ul li {
-      color: white;
-      font-size: 20px;
-      margin-left: 15px;
-    }
+        html {
+            background: #f5f5f5;
+        }
 
-    footer ul li a {
-      color: white;
-      text-decoration: underline;
-    }
+        main {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
 
-    header ul, footer {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      row-gap: 30px;
-    }
+        #scroll-to-top {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
 
-    .video_box iframe {
-      width: min(90%, 560px);
-      height: 315px;
-    }
+        #scroll-to-top.show {
+            opacity: 1;
+        }
 
-    header li {
-      padding-left: 25px;
-      padding-right: 25px;
-      height: 40px;
-    }
+        #nav {
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
 
-    header li a {
-      display: block;
-      /*padding: 14px 25px 10px 25px;*/
-      text-transform: uppercase;
-      color: #6696fe !important;
-      text-decoration: none !important;
-      font-size: 24px;
-      /*margin: 20px;*/
-      font-weight: 300;
-      transition: all .25s;
-      border-bottom: 3px solid transparent;
-    }
+        h1 {
+            margin-left: auto;
+            margin-right: auto;
+            object-fit: scale-down;
+            width: 100%;
+            max-width: 720px;
+            font-size: 36px;
+            font-weight: bold;
+        }
 
-    header li.active a {
-      display: block;
-      /*padding: 14px 25px 10px 25px;*/
-      text-transform: uppercase;
-      color: #f44336 !important;
-      text-decoration: none !important;
-      font-size: 24px;
-      /*margin: 20px;*/
-      font-weight: 300;
-      transition: all .25s;
-      border-bottom: 3px solid #f44336;
-    }
+        section {
+            margin-left: auto;
+            margin-right: auto;
+            object-fit: scale-down;
+            width: 100%;
+            max-width: 720px;
+            padding-top: 35px;
+        }
 
-    header li a:hover {
-      display: block;
-      /*padding: 14px 25px 10px 25px;*/
-      text-transform: uppercase;
-      color: #f8982d !important;
-      text-decoration: none !important;
-      font-size: 24px;
-      /*margin: 20px;*/
-      font-weight: 300;
-      transition: all .25s;
-      border-bottom: 3px solid #f8982d;
-    }
+        img {
+            margin-left: auto;
+            margin-right: auto;
+            object-fit: scale-down;
+            width: 100%;
+            max-width: 720px;
+        }
+
+        .portfolio_space {
+            display: flex;
+            justify-content: center;
+            flex-flow: column wrap;
+        }
 
 
-    .video_box {
-      margin-top: 35px;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
+        header, footer {
+            width: 100%;
+            background-color: #1e1e1e;
+            color: white;
+            font-size: 22px;
+        }
 
-    .video_box iframe {
-      margin-left: auto;
-      margin-right: auto;
-    }
+        footer ul li {
+            color: white;
+            font-size: 20px;
+            margin-left: 15px;
+        }
 
-    .video_box blockquote {
-      width: 350px;
-    }
-  </style>
+        footer ul li a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        header ul, footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 30px;
+        }
+
+        .video_box iframe {
+            width: min(90%, 560px);
+            height: 315px;
+        }
+
+        header li {
+            padding-left: 25px;
+            padding-right: 25px;
+            height: 40px;
+        }
+
+        header {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        header li a {
+            display: block;
+            /*padding: 14px 25px 10px 25px;*/
+            text-transform: uppercase;
+            color: #6696fe !important;
+            text-decoration: none !important;
+            font-size: 24px;
+            /*margin: 20px;*/
+            font-weight: 300;
+            transition: all .25s;
+            border-bottom: 3px solid transparent;
+        }
+
+        header li.active a {
+            display: block;
+            /*padding: 14px 25px 10px 25px;*/
+            text-transform: uppercase;
+            color: #f44336 !important;
+            text-decoration: none !important;
+            font-size: 24px;
+            /*margin: 20px;*/
+            font-weight: 300;
+            transition: all .25s;
+            border-bottom: 3px solid #f44336;
+        }
+
+        header li a:hover {
+            display: block;
+            /*padding: 14px 25px 10px 25px;*/
+            text-transform: uppercase;
+            color: #f8982d !important;
+            text-decoration: none !important;
+            font-size: 24px;
+            /*margin: 20px;*/
+            font-weight: 300;
+            transition: all .25s;
+            border-bottom: 3px solid #f8982d;
+        }
+
+
+        .video_box {
+            margin-top: 35px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .video_box iframe {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video_box blockquote {
+            width: 350px;
+        }
+    </style>
 </head>
 <body>
 <header>
-  <ul>
-    <li title="CARL: Analysis Tool for Rocket League">
-      <a href="https://lndrlndr.github.io/">CARL</a>
-    </li>
-    <li title="BARL: Broadcast Assistant for Rocket League">
-      <a href="https://lndrlndr.github.io/BARL-Overlay/">BARL</a>
-    </li>
-    <li class="active" title="Overlay Portfolio">
-      <a href="https://lndrlndr.github.io/portfolio/">OVERLAYS</a>
-    </li>
+    <ul>
+        <li title="CARL: Analysis Tool for Rocket League">
+            <a href="https://lndrlndr.github.io/">CARL</a>
+        </li>
+        <li title="BARL: Broadcast Assistant for Rocket League">
+            <a href="https://lndrlndr.github.io/BARL-Overlay/">BARL</a>
+        </li>
 
-    <li title="Home"><a href="https://lndrlndr.github.io/lndrlndrlndr">
-      <img style="height: 50px; width: 50px; border-radius: 50%; transform: translateY(-5px)"
-           alt="LNDRLNDRLNDR" src="https://lndrlndr.github.io/lndrlndrlndr/icon.png"/> </a>
-    </li>
 
-    <li title="Check out my Twitter">
-      <a target="_blank" href="https://x.com/LNDRLNDRLNDR">TWITTER</a>
-    </li>
-    <li title="Send me an Email">
-      <a target="_blank" href="mailto:lndr.overlays@gmail.com">EMAIL</a>
-    </li>
-    <li title="Join the BARL Discord server">
-      <a target="_blank" href="https://discord.gg/qF5FkJxNdR">DISCORD</a>
-    </li>
-  </ul>
+        <li title="Home"><a href="https://lndrlndr.github.io/lndrlndrlndr">
+            <img style="height: 50px; width: 50px; border-radius: 50%; transform: translateY(-5px)"
+                 alt="LNDRLNDRLNDR" src="https://lndrlndr.github.io/lndrlndrlndr/icon.png"/> </a>
+        </li>
+
+        <li class="active" title="Custom Overlays">
+            <a href="https://lndrlndr.github.io/portfolio/">OVERLAYS</a>
+        </li>
+
+        <li title="Check out my contact information">
+            <a href="https://lndrlndr.github.io/Contact/">CONTACT</a>
+        </li>
+    </ul>
 </header>
 
-<header>
-  <ul style="background-color:#2f2f2f;">
-    <li class="active" title="Dynamic Overlays Portfolio">
-      <a href="https://lndrlndr.github.io/portfolio">PORTFOLIO</a>
-    </li>
-    <li title="Dynamic Overlays Clients">
-      <a href="https://lndrlndr.github.io/overlays">CLIENTS</a>
-    </li>
-    <li title="Dynamic Overlays More Information">
-      <a href="https://lndrlndr.github.io/RL-HUD/">INFO</a>
-    </li>
-  </ul>
+<header style="background-color:#2f2f2f;">
+    <ul>
+        <li class="active" title="Dynamic Overlays Portfolio">
+            <a href="https://lndrlndr.github.io/portfolio">PORTFOLIO</a>
+        </li>
+        <li title="Dynamic Overlays Clients">
+            <a href="https://lndrlndr.github.io/overlays">CLIENTS</a>
+        </li>
+        <li title="Dynamic Overlays More Information">
+            <a href="https://lndrlndr.github.io/RL-HUD/">INFO</a>
+        </li>
+    </ul>
 </header>
 <main>
-  <h1>Broadcasting Overlay HUD for Rocket League</h1>
+    <h1>Broadcasting Overlay HUD for Rocket League</h1>
 
-  <div class="video_box">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/T_GBebE8DJE?autoplay=1"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-  </div>
-  <section id="info">
-    <h2>What is a Dynamic Overlay for Rocket League?</h2>
-    <p>The esports scene of Rocket League has come a long way. With millions of players and a thriving competitive
-      scene, it's become one of the most popular games on the market. But with so many people streaming and
-      watching Rocket League matches, it can be hard to stand out from the crowd.</p>
-
-    <p>That's where the Broadcasting Overlay HUD for Rocket League comes in. By adding a dynamic overlay to your
-      stream, you
-      can create a more professional and engaging viewing experience for your audience. The overlay will display
-      key information about the match, including the score, timer, and team names, so viewers always know what's
-      happening. And because the overlay is fully automated, it frees up the casters to focus on the gameplay,
-      rather than worrying about the technical details of the stream.</p>
-
-    <p>But why choose the Rocket League Dynamic Overlay HUD from lndrlndrlndr? For one thing, my overlays are fully
-      customizable, so you can choose the colors, fonts, and other details that match your brand. And because I
-      use the latest coding techniques, my overlays are always up-to-date with the newest trends and technology
-      and work with every streaming platform.</p>
-
-    <h2>How to get a Custom Dynamic Overlay for Rocket League?</h2>
-    <p>If you're ready to take your Rocket League stream to the next level, I can help. I specialize in
-      creating custom dynamic overlays for Rocket League matches, designed to make your stream stand out from the
-      crowd.</p>
-
-    <p>So how does it work? First, I'll work with you to understand your needs and your brand. Then, I'll create a
-      custom overlay that matches your specifications, including the score, timer, team names, and any other
-      information you need to display. Finally, I'll provide you with the overlay code and any necessary
-      instructions, so you can start using it right away.</p>
-
-    <p>And don't worry about the cost - I can create an overlay for any budget. Whether you're a
-      professional esports organization or a small streamer just starting out, I can help you create a more
-      engaging and professional viewing experience for your audience.</p>
-  </section>
-  <section id="portfolio">
-
-    <h2>Portfolio</h2>
-    <p>
-      Below you can see some of my past projects.<br/>
-    </p>
-
-    <div class="portfolio_space">
-
-      <h3>RSC EU</h3>
-      <p>
-        This project made for RSC EU contains a Rocket League Game HUD, an overlay screen for when a goal is
-        scored with customizable sponsor slots.
-        The win screen shows who won the current game and also gives the viewer information on the series score.
-        Up next is the post game statistics screen, this contains all sorts of stats from points, goals assets,
-        but also boost consumption and field domination. When a series is done we can compare each team with the
-        post series stats screen, this shows the performance of each team in the series.
-        At the end of the series the MVP screen can be shown to highlight the most valuable player in th series.
-        The caster screen can dynamically be adjusted to fit the amount of casters required from one caster up
-        to three casters. This caster screen can also show predictions for the upcoming series as well as
-        customizable text to give the viewer more information. And finally an intermission screen which can be
-        used as a "Starting soon" screen, "Be right back" screen, or any intermission you might need since the
-        text is fully customizable.
-      </p>
-      <img
-        alt="Rocket League overlay for RSC"
-        src="RSC.png"
-      />
-
-      <h3>Feer</h3>
-      <p>
-        This overlay is made for Feer (Twitch) and is on first sight a more simple overlay, with a lot of hidden
-        features. First of all it has a series score overview box with player name, player nationality flags.
-        In the game overlay the player names and nationality flags are also shown, it also shows the player or
-        team boost meter at the very top so the viewer can keep track of the boost at all times.
-      </p>
-      <img
-        alt="Feer Twitch RL Overlay Hud"
-        src="Feer.png"
-      />
-
-      <h3>Gen.G Mobil1 Racing</h3>
-      <p>
-        The next project is made for the organisation Gen.G which has a Rocket League team sponsored by Mobil1.
-        The main game overlay contains a boost meter as well as a speed meter to give the viewer a perception of
-        speed and give it a racing theme. The main scoreboard only contains the team logos with the full team
-        names integrated into the team boost boxes to give it a clean aesthetic and also refer to formula 1.
-        During the gameplay a customizable animated sponsor box is shown to display each sponsor to the viewer.
-        While a goal replay happens a Minimap is shown to give the viewer a better understanding of how the goal
-        developed.
-      </p>
-      <img
-        alt="GenG Rocket League Overlay"
-        src="GenGxMobil1.png"
-      />
-
-      <h3>G1</h3>
-      <p>
-        This was made for the "G1 Invitational" tournament with a prize pool of 10k and hosted by 'GAMERSFIRST'
-        (aka G1). It's inspired by the NFL and uses a lot of squared shapes. During goal replays a Minimap
-        (radar) is shown to give the viewer more insight into the play that caused the goal to happen. The
-        series score is shown on the outsides of the score-bug (top header) and automatically adjusts from
-        best of 0 up to best of 9. The post game stat screen shows stats like: score, goals, assists, saves,
-        shots, demos and touches. This makes sure the viewer understands which players performed well and what
-        their contribution was.
-      </p>
-      <img
-        alt="G1 Rocket League Broadcasting Hud"
-        src="GamersFirst.png"
-      />
-
-      <h3>PSG (Paris Saint-Germain) x Tundra</h3>
-      <p>
-        The next Rocket League HUD is made for PSG (aka Paris Saint-Germain) and Tundra Esports. The overlay
-        shows both team logos and player nationalities to give the viewer some information on the background of
-        these players. The overlay is fully branded to the color scheme and font of PSG and Tundra while giving
-        the viewer the information required to enjoy the broadcast to the highest level.
-      </p>
-      <img
-        alt="Dynamic Rocket League Overlay for Paris Saint-Germain Tundra"
-        src="PSG TUN.png"
-      />
-
-      <h3>Ranked Hoops</h3>
-      <p>
-        This custom HUD is made for Ranked Hoops which is an extra mode in Rocket League that instead of goals
-        has basketball rings. Since this is a different mode we added extra specific events and animations to
-        fully fit the matches and enhance the viewer experience to the maximum. The game overlay followed by the
-        goal replay overlay and after each game the post game stats screen to complete the package.
-      </p>
-      <img
-        alt="Esports Broadcast HUD for Ranked Hoops"
-        src="RankedHoops.png"
-      />
-
-      <h3>More</h3>
-      <p>
-        For more projects check out my Behance page, click
-        <a href="https://www.behance.net/gallery/151199497/Custom-Rocket-League-Broadcasting-Overlay"
-           target="_blank">Here
-        </a>
-      </p>
-      <div class="video_box">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Gz1cC9BpshQ"
+    <div class="video_box">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/T_GBebE8DJE?autoplay=1"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
-      </div>
     </div>
+    <section id="info">
+        <h2>What is a Dynamic Overlay for Rocket League?</h2>
+        <p>The esports scene of Rocket League has come a long way. With millions of players and a thriving competitive
+            scene, it's become one of the most popular games on the market. But with so many people streaming and
+            watching Rocket League matches, it can be hard to stand out from the crowd.</p>
 
-    <div style="height: 35px;"></div>
+        <p>That's where the Broadcasting Overlay HUD for Rocket League comes in. By adding a dynamic overlay to your
+            stream, you
+            can create a more professional and engaging viewing experience for your audience. The overlay will display
+            key information about the match, including the score, timer, and team names, so viewers always know what's
+            happening. And because the overlay is fully automated, it frees up the casters to focus on the gameplay,
+            rather than worrying about the technical details of the stream.</p>
 
-  </section>
-  <!--    <section id="contact" style="padding-bottom: 20px;">-->
-  <!--        <h2>Contact information</h2>-->
-  <!--        <p>Discord: lndrlndrlndr</p>-->
-  <!--        <p>Twitter: @LNDRLNDRLNDR</p>-->
-  <!--        <p>Mail: lndr.overlays@gmail.com</p>-->
-  <!--    </section>-->
+        <p>But why choose the Rocket League Dynamic Overlay HUD from lndrlndrlndr? For one thing, my overlays are fully
+            customizable, so you can choose the colors, fonts, and other details that match your brand. And because I
+            use the latest coding techniques, my overlays are always up-to-date with the newest trends and technology
+            and work with every streaming platform.</p>
+
+        <h2>How to get a Custom Dynamic Overlay for Rocket League?</h2>
+        <p>If you're ready to take your Rocket League stream to the next level, I can help. I specialize in
+            creating custom dynamic overlays for Rocket League matches, designed to make your stream stand out from the
+            crowd.</p>
+
+        <p>So how does it work? First, I'll work with you to understand your needs and your brand. Then, I'll create a
+            custom overlay that matches your specifications, including the score, timer, team names, and any other
+            information you need to display. Finally, I'll provide you with the overlay code and any necessary
+            instructions, so you can start using it right away.</p>
+
+        <p>And don't worry about the cost - I can create an overlay for any budget. Whether you're a
+            professional esports organization or a small streamer just starting out, I can help you create a more
+            engaging and professional viewing experience for your audience.</p>
+    </section>
+    <section id="portfolio">
+
+        <h2>Portfolio</h2>
+        <p>
+            Below you can see some of my past projects.<br/>
+        </p>
+
+        <div class="portfolio_space">
+
+            <h3>RSC EU</h3>
+            <p>
+                This project made for RSC EU contains a Rocket League Game HUD, an overlay screen for when a goal is
+                scored with customizable sponsor slots.
+                The win screen shows who won the current game and also gives the viewer information on the series score.
+                Up next is the post game statistics screen, this contains all sorts of stats from points, goals assets,
+                but also boost consumption and field domination. When a series is done we can compare each team with the
+                post series stats screen, this shows the performance of each team in the series.
+                At the end of the series the MVP screen can be shown to highlight the most valuable player in th series.
+                The caster screen can dynamically be adjusted to fit the amount of casters required from one caster up
+                to three casters. This caster screen can also show predictions for the upcoming series as well as
+                customizable text to give the viewer more information. And finally an intermission screen which can be
+                used as a "Starting soon" screen, "Be right back" screen, or any intermission you might need since the
+                text is fully customizable.
+            </p>
+            <img
+                    alt="Rocket League overlay for RSC"
+                    src="RSC.png"
+            />
+
+            <h3>Feer</h3>
+            <p>
+                This overlay is made for Feer (Twitch) and is on first sight a more simple overlay, with a lot of hidden
+                features. First of all it has a series score overview box with player name, player nationality flags.
+                In the game overlay the player names and nationality flags are also shown, it also shows the player or
+                team boost meter at the very top so the viewer can keep track of the boost at all times.
+            </p>
+            <img
+                    alt="Feer Twitch RL Overlay Hud"
+                    src="Feer.png"
+            />
+
+            <h3>Gen.G Mobil1 Racing</h3>
+            <p>
+                The next project is made for the organisation Gen.G which has a Rocket League team sponsored by Mobil1.
+                The main game overlay contains a boost meter as well as a speed meter to give the viewer a perception of
+                speed and give it a racing theme. The main scoreboard only contains the team logos with the full team
+                names integrated into the team boost boxes to give it a clean aesthetic and also refer to formula 1.
+                During the gameplay a customizable animated sponsor box is shown to display each sponsor to the viewer.
+                While a goal replay happens a Minimap is shown to give the viewer a better understanding of how the goal
+                developed.
+            </p>
+            <img
+                    alt="GenG Rocket League Overlay"
+                    src="GenGxMobil1.png"
+            />
+
+            <h3>G1</h3>
+            <p>
+                This was made for the "G1 Invitational" tournament with a prize pool of 10k and hosted by 'GAMERSFIRST'
+                (aka G1). It's inspired by the NFL and uses a lot of squared shapes. During goal replays a Minimap
+                (radar) is shown to give the viewer more insight into the play that caused the goal to happen. The
+                series score is shown on the outsides of the score-bug (top header) and automatically adjusts from
+                best of 0 up to best of 9. The post game stat screen shows stats like: score, goals, assists, saves,
+                shots, demos and touches. This makes sure the viewer understands which players performed well and what
+                their contribution was.
+            </p>
+            <img
+                    alt="G1 Rocket League Broadcasting Hud"
+                    src="GamersFirst.png"
+            />
+
+            <h3>PSG (Paris Saint-Germain) x Tundra</h3>
+            <p>
+                The next Rocket League HUD is made for PSG (aka Paris Saint-Germain) and Tundra Esports. The overlay
+                shows both team logos and player nationalities to give the viewer some information on the background of
+                these players. The overlay is fully branded to the color scheme and font of PSG and Tundra while giving
+                the viewer the information required to enjoy the broadcast to the highest level.
+            </p>
+            <img
+                    alt="Dynamic Rocket League Overlay for Paris Saint-Germain Tundra"
+                    src="PSG TUN.png"
+            />
+
+            <h3>Ranked Hoops</h3>
+            <p>
+                This custom HUD is made for Ranked Hoops which is an extra mode in Rocket League that instead of goals
+                has basketball rings. Since this is a different mode we added extra specific events and animations to
+                fully fit the matches and enhance the viewer experience to the maximum. The game overlay followed by the
+                goal replay overlay and after each game the post game stats screen to complete the package.
+            </p>
+            <img
+                    alt="Esports Broadcast HUD for Ranked Hoops"
+                    src="RankedHoops.png"
+            />
+
+            <h3>More</h3>
+            <p>
+                For more projects check out my Behance page, click
+                <a href="https://www.behance.net/gallery/151199497/Custom-Rocket-League-Broadcasting-Overlay"
+                   target="_blank">Here
+                </a>
+            </p>
+            <div class="video_box">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Gz1cC9BpshQ"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div style="height: 35px;"></div>
+
+    </section>
+    <!--    <section id="contact" style="padding-bottom: 20px;">-->
+    <!--        <h2>Contact information</h2>-->
+    <!--        <p>Discord: lndrlndrlndr</p>-->
+    <!--        <p>Twitter: @LNDRLNDRLNDR</p>-->
+    <!--        <p>Mail: lndr.overlays@gmail.com</p>-->
+    <!--    </section>-->
 </main>
 <a id="scroll-to-top" href="#" class="btn-floating btn-large waves-effect waves-light red">
-  <i class="material-icons">arrow_upward</i>
+    <i class="material-icons">arrow_upward</i>
 </a>
 <footer>
-  <ul style="color: white">
-    Contact:
-    <li title="Follow me on Twitter">
-      Twitter: <a target="_blank" href="https://x.com/LNDRLNDRLNDR">@LNDRLNDRLNDR</a>
-    </li>
-    <li title="Send me an Email">
-      Email: <a target="_blank" href="mailto:lndr.overlays@gmail.com">lndr.overlays@gmail.com</a>
-    </li>
-    <li title="Talk to me on Discord">
-      Discord: <a target="_blank" href="https://discord.gg/qF5FkJxNdR">lndrlndrlndr</a>
-    </li>
-  </ul>
+    <ul style="color: white">
+        Contact:
+        <li title="Follow me on Twitter">
+            Twitter: <a target="_blank" href="https://x.com/LNDRLNDRLNDR">@LNDRLNDRLNDR</a>
+        </li>
+        <li title="Send me an Email">
+            Email: <a target="_blank" href="mailto:lndr.overlays@gmail.com">lndr.overlays@gmail.com</a>
+        </li>
+        <li title="Talk to me on Discord">
+            Discord: <a target="_blank" href="https://discord.gg/qF5FkJxNdR">lndrlndrlndr</a>
+        </li>
+    </ul>
 </footer>
 </body>
 <script>
