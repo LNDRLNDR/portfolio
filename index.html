@@ -37,19 +37,32 @@
             height: 100%;
             width: 100%;
             font-family: 'Montserrat', sans-serif;
-            color: #1e1e1e;
+            color: #041e49;
             margin: 0;
             padding: 0;
             background: transparent;
         }
 
         html {
-            background: #f5f5f5;
+            background: #f3f6fc;
+            margin: 0;
         }
 
         main {
-            padding-left: 50px;
-            padding-right: 50px;
+
+            width: min(90%, 700px);
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #ffffff;
+            border: 2px solid transparent;
+            border-radius: 24px;
+            padding: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+
+            color: #041e49;
+            font-size: 1rem;
+            font-weight: 400;
         }
 
         #scroll-to-top {
@@ -72,23 +85,32 @@
         }
 
         h1 {
-            margin-left: auto;
-            margin-right: auto;
-            object-fit: scale-down;
-            width: 100%;
-            max-width: 720px;
-            font-size: 36px;
-            font-weight: bold;
+            font-weight: 900;
+            font-size: 2.75rem;
+
             margin-bottom: 2px;
+            margin-top: 0;
+            text-align: center;
         }
 
         h2 {
+            font-size: 2.15rem;
+            font-weight: 700;
+
             margin-bottom: 2px;
-            font-size: 38px;
         }
+
         h3 {
-            font-size: 32px;
+            font-size: 1.75rem;
+            font-weight: 700;
+
             margin-bottom: 2px;
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
         }
 
         section {
@@ -138,11 +160,6 @@
             flex-wrap: wrap;
             justify-content: center;
             row-gap: 30px;
-        }
-
-        .video_box iframe {
-            width: min(90%, 560px);
-            height: 315px;
         }
 
         header li {
@@ -205,16 +222,47 @@
             align-items: center;
             flex-wrap: wrap;
             justify-content: space-between;
+
         }
 
         .video_box iframe {
             margin-left: auto;
             margin-right: auto;
+            width: min(90%, 560px);
+            height: 315px;
+            border-radius: 12px;
+            box-shadow: 2px 2px 2px #1e1e1e70;
         }
 
-        .video_box blockquote {
-            width: 350px;
+        .discord-btn {
+            background-color: #7289DA;
+            margin-top: 0px;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 2px 2px 2px #1e1e1e;
+            width: fit-content;
         }
+
+        .discord-btn:hover {
+            background-color: #f8982d !important;
+            margin-top: 0px;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 2px 2px 2px #1e1e1e;
+            width: fit-content;
+        }
+
+        .discord-svg {
+            margin-right: 15px;
+            width: 25px;
+            height: 25px;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+
     </style>
 </head>
 <body>
@@ -492,9 +540,21 @@
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
             </div>
+
+            <h6 style="text-align: center; font-weight: bold;">Join the Discord to learn more:</h6>
+            <a href="https://discord.gg/SqUq2DhTCR" target="_blank"
+               class="waves-effect waves-light btn discord-btn btn-large"
+               rel="nofollow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="discord-svg" viewBox="0 0 16 16">
+                    <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
+                </svg>
+                <div>Join the Discord</div>
+                <i class="material-icons" style="margin-left: 7px">open_in_new</i>
+            </a>
+
         </div>
 
-        <div style="height: 35px;"></div>
+        <div style="height: 15px;"></div>
 
     </section>
     <!--    <section id="contact" style="padding-bottom: 20px;">-->
@@ -511,13 +571,13 @@
     <ul style="color: white">
         Contact:
         <li title="Follow me on Twitter">
-            Twitter: <a target="_blank" href="https://x.com/LNDRLNDRLNDR">@LNDRLNDRLNDR</a>
+            Twitter: <a target="_blank" href="https://x.com/LNDRLNDRLNDR" rel="nofollow">@LNDRLNDRLNDR</a>
         </li>
         <li title="Send me an Email">
-            Email: <a target="_blank" href="mailto:lndr.overlays@gmail.com">lndr.overlays@gmail.com</a>
+            Email: <a target="_blank" href="mailto:lndr.overlays@gmail.com" rel="nofollow">lndr.overlays@gmail.com</a>
         </li>
         <li title="Talk to me on Discord">
-            Discord: <a target="_blank" href="https://discord.gg/qF5FkJxNdR">lndrlndrlndr</a>
+            Discord: <a target="_blank" href="https://discord.gg/qF5FkJxNdR" rel="nofollow">lndrlndrlndr</a>
         </li>
     </ul>
 </footer>
